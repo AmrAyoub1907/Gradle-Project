@@ -20,9 +20,6 @@ import java.io.IOException;
 public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
     private Context mContext;
-    public EndpointsAsyncTask(Context context) {
-        this.mContext = context;
-    }
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -55,8 +52,8 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        Intent intent = new Intent(mContext, AndriodLibActivity.class);
-        intent.putExtra("joke", result);
+        Intent intent = new Intent(mContext,AndriodLibActivity.class);
+        intent.putExtra(AndriodLibActivity.INTENT_JOKE, result);
         mContext.startActivity(intent);
         //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
     }

@@ -53,7 +53,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         Intent intent = new Intent(mContext,AndriodLibActivity.class);
-        intent.putExtra("joke", result);
+        intent.putExtra(AndriodLibActivity.INTENT_JOKE, result);
         mContext.startActivity(intent);
         //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
     }

@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 import java.util.concurrent.ExecutionException;
 
 import static android.support.test.InstrumentationRegistry.getContext;
+import static android.support.test.InstrumentationRegistry.getTargetContext;
 import static junit.framework.Assert.assertNotNull;
 
 /**
@@ -25,7 +26,7 @@ public class InstrumentedTest {
     @Test
     public void checkNonString(){
         String result = null;
-        Context mcontext = new MockContext();
+        Context mcontext = getTargetContext();
         //Context mcontext = getcontext();
         try {
             result = new EndpointsAsyncTask().execute(mcontext).get();
